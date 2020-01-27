@@ -1,5 +1,5 @@
 class Temperature < SensorDatum
-  UNIT = 'celcius'.freeze
+  UNIT = 'Celcius'.freeze
 
   def default_unit
     UNIT

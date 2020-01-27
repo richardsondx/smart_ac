@@ -1,5 +1,5 @@
 class AirHumidity < SensorDatum
-  UNIT = 'percentage'.freeze
+  UNIT = 'Percent'.freeze
 
   def default_unit
     UNIT

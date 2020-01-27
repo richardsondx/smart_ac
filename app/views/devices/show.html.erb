@@ -1,2 +1,25 @@
-<h1>Devices#show</h1>
-<p>Find me in app/views/devices/show.html.erb</p>
+<div class='container-fluid'>
+  <%= link_to('Go Back', admins_path, class: 'btn btn-light m-4') %>
+  <hr>
+  <br>
+  <h1>Device # <%= @device.serial_number %></h1>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th scope="row">Serial Number</th>
+        <td><%= @device.serial_number %></td>
+       
+      </tr>
+      <tr>
+        <th scope="row">Registration Date</th>
+        <td><%= @device.registration_date %></td>
+      <tr>
+      <tr>
+        <th scope="row">Firmware Version</th>
+        <td><%= @device.firmware_version %></td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <%= render 'sensor_data' %>
+</div>

@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
-  def show
+  def index
+    @devices = Device.all
   end
 end

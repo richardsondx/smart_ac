@@ -1,0 +1,31 @@
+<div class="container-fluid">
+<%= link_to('API DOCUMENTATION', apipie_apipie_path, class: 'btn btn-info m-4') %>
+  <hr>
+  <h1 class='py-3'>Devices</h1>
+  <p>This is the list of all the smart AC units that are currently registered.</p>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">serial_number</th>
+        <th scope="col">registration_date</th>
+        <th scope="col">firmware_version</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @devices.each_with_index do |device, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= device.serial_number %></td>
+          <td><%= device.registration_date %></td>
+          <td><%= device.firmware_version %></td>
+          <td>
+            <%= link_to('View', device_path(device.id), class: 'btn btn-light')%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
