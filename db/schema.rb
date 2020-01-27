@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_01_25_181930) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "devices", force: :cascade do |t|
     t.string "serial_number"
     t.string "registration_date"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_01_25_181930) do
   end
 
   create_table "health_statuses", force: :cascade do |t|
-    t.integer "device_id", null: false
+    t.bigint "device_id", null: false
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_01_25_181930) do
   end
 
   create_table "sensor_data", force: :cascade do |t|
-    t.integer "device_id", null: false
+    t.bigint "device_id", null: false
     t.string "type"
     t.string "unit"
     t.string "value"
