@@ -58,9 +58,9 @@ class Api::V1::DevicesController < ApplicationController
 
   api :POST, '/v1/devices/:id/record', 'Create a Sensor Record'
   desc 'Send a request to save sensor data from a given device id'
-  param :id, String, desc: 'The serial number of the AC unit'
+  param :id, String, desc: 'The id of the AC unit'
   param :sensor, Hash, desc: 'device object' do 
-    param :category, String, desc: 'the cateogry type of the sensor'
+    param :category, String, desc: 'the category types of the sensor (e.g: air_humidity, carbon_monoxide_lvl, temperature)'
     param :value, String, desc: 'the value of the sensor'
   end
   error 404, "No device with that id was found"

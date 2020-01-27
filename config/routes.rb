@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   apipie
-  # get 'admins/show'
   resources :admins, only: [:index]
   resources :devices, only: [:show]
 
